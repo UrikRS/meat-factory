@@ -4,6 +4,7 @@ import random
 
 
 lock = Lock()
+process_time = {'牛肉': 1, '豬肉': 2, '雞肉': 3}
 
 
 def now():
@@ -24,13 +25,7 @@ def take_meat(worker):
 
 def meat_processing(worker, meat):
     while meat:
-        match meat:
-            case '牛肉':
-                sleep(1)
-            case '豬肉':
-                sleep(2)
-            case '雞肉':
-                sleep(3)
+        sleep(process_time[meat])
         print(f'{worker} 在 {now()} 處理完{meat}')
         meat = take_meat(worker)
 
