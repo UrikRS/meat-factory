@@ -27,13 +27,11 @@ def meat_processing(worker, meat):
         match meat:
             case '牛肉':
                 sleep(1)
-                print(f'{worker} 在 {now()} 處理完牛肉')
             case '豬肉':
                 sleep(2)
-                print(f'{worker} 在 {now()} 處理完豬肉')
             case '雞肉':
                 sleep(3)
-                print(f'{worker} 在 {now()} 處理完雞肉')
+        print(f'{worker} 在 {now()} 處理完{meat}')
         meat = take_meat(worker)
 
 
